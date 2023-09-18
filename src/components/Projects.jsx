@@ -14,8 +14,8 @@ export default function Projects(props) {
           Projects
         </Heading>
         <Box mt={"20px"}>
-          <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={"10"} display={"flex"} justifyContent={"center"} alignItems={'center'} flexDir={{base: 'column', md: 'row'}} flexWrap={'wrap'}>
-            <Card maxW="sm" minH={'70vh'}>
+          <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={"10"} display={"flex"} justifyContent={"center"} alignItems={'center'} flexDir={{base: 'column', md: 'row'}} flexWrap={'wrap'} mb={'15px'}>
+            <Card maxW="sm" minH={'90vh'}>
               <CardBody>
                 <Image src={portfolio1} alt="First Project" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
@@ -25,14 +25,14 @@ export default function Projects(props) {
               </CardBody>
               <CardFooter>
                 <Link href="https://fauzarizky.github.io/portfolio/" isExternal>
-                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"}>
+                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"} _hover={{color: '#272343', bgColor: '#ffd803'}}>
                     Visit
                   </Button>
                 </Link>
               </CardFooter>
             </Card>
 
-            <Card maxW="sm" minH={'70vh'}>
+            <Card maxW="sm" minH={'90vh'}>
               <CardBody>
                 <Image src={portfolio2} alt="Second Project" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
@@ -44,16 +44,16 @@ export default function Projects(props) {
               </CardBody>
               <CardFooter>
                 <Link href="https://resilient-yeot-af509a.netlify.app" isExternal>
-                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"}>
+                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"} _hover={{color: '#272343', bgColor: '#ffd803'}}>
                     Visit
                   </Button>
                 </Link>
               </CardFooter>
             </Card>
 
-            <Card maxW="sm" minH={'70vh'}>
+            <Card maxW="sm" minH={'90vh'}>
               <CardBody>
-                <Image src={portfolio3} alt="Third Project" borderRadius="lg" h={"25vh"} w={"100%"} />
+                <Image src={portfolio3} alt="Third Project" borderRadius="lg" h={"35vh"} w={"100%"} />
                 <Stack mt="6" spacing="3">
                   <Heading size="md">Coming Soon</Heading>
                   <Text>Third Project is under construction!</Text>
@@ -61,7 +61,7 @@ export default function Projects(props) {
               </CardBody>
               <CardFooter>
                 <Link href="#">
-                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"}>
+                  <Button variant="solid" color={"#ffd803"} bgColor={"#272343"} _hover={{color: '#272343', bgColor: '#ffd803'}}>
                     Visit
                   </Button>
                 </Link>

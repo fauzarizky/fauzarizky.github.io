@@ -29,18 +29,18 @@ export default function Navbar(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4} w={"100%"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
+      <Box bg={useColorModeValue("#272343", "gray.900")} px={4} w={"100%"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
         <Flex alignItems={"center"} justifyContent={"space-between"} h={"10vh"}>
           <IconButton size={"md"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={"Open Menu"} display={{ md: "none" }} onClick={isOpen ? onClose : onOpen} />
           <a href="/">
-            <Text fontSize={"30px"} fontWeight={"bold"} style={{ cursor: "pointer" }}>
+            <Text fontSize={"30px"} fontWeight={"bold"} style={{ cursor: "pointer" }} color={useColorModeValue('#ffd803', '#ffd803')}>
               rzky()
             </Text>
           </a>
           <HStack spacing={8} alignItems={"center"}>
             <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink>
+                <Text color={useColorModeValue('#ffd803', '#ffd803')}><NavLink key={link}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
               ))}
               <IconButton size={"md"} icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} display={{ sm: "none", md: "flex" }} ml={"10px"} />
             </HStack>
