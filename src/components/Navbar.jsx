@@ -51,7 +51,7 @@ export default function Navbar(props) {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <Text color={useColorModeValue('#ffd803', '#ffd803')}><NavLink key={link.toLowerCase()}>{link}</NavLink></Text>
+                <Text color={useColorModeValue('#ffd803', '#ffd803')}><NavLink key={link.toLowerCase()}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
               ))}
               <IconButton size={"md"} icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} />
             </Stack>
