@@ -10,12 +10,12 @@ export default function Projects(props) {
   return (
     <div data-aos="fade-up">
       <Box id={`${props.id}`} minH={"93vh"} display={"flex"} flexDir={"column"} justifyContent={"center"} style={{ fontFamily: "Roboto Mono, monoscope" }} mb={{base:'20px', md: '20px', lg: 0}}>
-        <Heading textAlign={"center"} textDecor={"underline"} color={color} mt={{base: '10px', md: 0}}>
+        <Heading textAlign={"center"} textDecor={"underline"} color={color} mt={{base: '40px', md: 0}}>
           Projects
         </Heading>
         <Box mt={"20px"}>
           <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={"10"} display={"flex"} justifyContent={"center"} alignItems={'center'} flexDir={{base: 'column', md: 'row'}} flexWrap={'wrap'} mb={'15px'}>
-            <Card maxW="sm" minH={'90vh'}>
+            <Card maxW="sm" minH={'550px'}>
               <CardBody>
                 <Image src={portfolio1} alt="First Project" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
@@ -32,7 +32,7 @@ export default function Projects(props) {
               </CardFooter>
             </Card>
 
-            <Card maxW="sm" minH={'90vh'}>
+            <Card maxW="sm" minH={'550px'}>
               <CardBody>
                 <Image src={portfolio2} alt="Second Project" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
@@ -51,7 +51,7 @@ export default function Projects(props) {
               </CardFooter>
             </Card>
 
-            <Card maxW="sm" minH={'90vh'}>
+            <Card maxW="sm" minH={'550px'}>
               <CardBody>
                 <Image src={portfolio3} alt="Third Project" borderRadius="lg" h={"35vh"} w={"100%"} />
                 <Stack mt="6" spacing="3">
