@@ -32,7 +32,7 @@ export default function Navbar(props) {
       <Box bg={useColorModeValue("#272343", "gray.900")} px={4} w={"100%"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
         <Flex alignItems={"center"} justifyContent={"space-between"} h={"10vh"}>
           <IconButton size={"md"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={"Open Menu"} display={{ md: "none" }} onClick={isOpen ? onClose : onOpen} />
-          <a href="/">
+          <a href="/rizky-portfolio/">
             <Text fontSize={"30px"} fontWeight={"bold"} style={{ cursor: "pointer" }} color={useColorModeValue('#ffd803', '#ffd803')}>
               rzky()
             </Text>
