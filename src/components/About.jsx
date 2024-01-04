@@ -32,7 +32,7 @@ export default function About(props) {
               </Text>
             </Box>
 
-            <Box h={{base: '25vh', md:"30vh"}} w={"90%"} display={"flex"} flexDir={'column'} justifyContent={'center'}>
+            <Box h={{base: '25vh', md:"30vh"}} w={"90%"} display={"flex"} flexDir={'column'} justifyContent={'center'} mt={{base: '10px', md: 0}}>
               <Heading color={"#272343"} fontWeight={"extrabold"} mb={"5px"} fontSize={{ sm: '25px', md: '30px', lg: ''}}>
                 Education
               </Heading>
