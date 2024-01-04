@@ -36,7 +36,7 @@ export default function About(props) {
               <Heading color={"#272343"} fontWeight={"extrabold"} mb={"5px"} fontSize={{ sm: '25px', md: '30px', lg: ''}}>
                 Education
               </Heading>
-              <Text fontWeight={"bold"} color={"#272343"} fontSize={{ base: "15px", md: "15px" }}>
+              <Text fontWeight={"bold"} color={"#272343"} fontSize={{ base: "15px", md: "20px" }}>
                 Purwadhika Digital Technology School
               </Text>
               <Text color={"#272343"} fontSize={{ base: "13px", sm: '15px', md: "15px" }}>
