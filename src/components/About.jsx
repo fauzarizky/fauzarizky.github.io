@@ -20,7 +20,7 @@ export default function About(props) {
             <Image src={profileImg} boxSize={{ base: "300px", md: "500px" }} objectFit={"contain"} />
           </Box>
 
-          <Stack w={{ base: "90%", md: "50%" }} bgColor={"#ffd803"} h={"65vh"} borderRadius={"10px"} display={"flex"} alignItems={"center"} flexDir={"column"} spacing={{base: '0', md:"20px"}} justifyContent={"center"}>
+          <Stack w={{ base: "90%", md: "50%" }} bgColor={"#ffd803"} h={"65vh"} borderRadius={"10px"} display={"flex"} alignItems={"center"} flexDir={"column"} spacing={{base: '0', md:"20px"}} justifyContent={"center"} py={{base: '15px', md: 0}}>
             
             <Box h={"25vh"} w={"90%"} mt={{base: '5px', sm: '10px', md: 0}} display={"flex"} flexDir={'column'} justifyContent={'center'}>
               <Heading color={"#272343"} fontWeight={"extrabold"} mb={"5px"} fontSize={{ sm: '25px',md: '30px', lg: ''}}>
