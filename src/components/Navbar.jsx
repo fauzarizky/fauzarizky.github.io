@@ -15,7 +15,7 @@ const NavLink = (props) => {
       rounded={"md"}
       _hover={{
         textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
+        bg: useColorModeValue("#573B78", "gray.700"),
       }}
       href={`#${children}`}>
       {children}

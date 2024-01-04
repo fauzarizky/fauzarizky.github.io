@@ -1,6 +1,6 @@
 import { Box, Heading, Icon, Image, Link, LinkBox, useColorMode } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaBehance } from "react-icons/fa";
 import profileImg from "../images/profile.png";
 
 export default function Home(props) {
@@ -39,6 +39,10 @@ export default function Home(props) {
               </Link>
               <Link href="https://github.com/fauzarizky" isExternal>
                 <Icon as={FaGithub} boxSize={7} marginStart={"10px"} />
+              </Link>
+
+              <Link href="https://behance.net/fauzarizky" isExternal>
+                <Icon as={FaBehance} boxSize={7} marginStart={"10px"} />
               </Link>
             </LinkBox>
           </Box>
