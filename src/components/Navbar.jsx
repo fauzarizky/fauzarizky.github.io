@@ -5,6 +5,7 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 const Links = ["home", "about", "projects"];
 
 const NavLink = (props) => {
+  // eslint-disable-next-line react/prop-types
   const { children } = props;
 
   return (
@@ -24,6 +25,7 @@ const NavLink = (props) => {
 };
 
 export default function Navbar(props) {
+  // eslint-disable-next-line react/prop-types
   const { children } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,7 +42,7 @@ export default function Navbar(props) {
           <HStack spacing={8} alignItems={"center"}>
             <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
               {Links.map((link) => (
-                <Text color={useColorModeValue('#ffd803', '#ffd803')}><NavLink key={link}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
+                <Text key={link} color={useColorModeValue('#ffd803', '#ffd803')}><NavLink>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
               ))}
               <IconButton size={"md"} icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} display={{ sm: "none", md: "flex" }} ml={"10px"} />
             </HStack>
@@ -51,7 +53,7 @@ export default function Navbar(props) {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <Text color={useColorModeValue('#ffd803', '#ffd803')}><NavLink key={link.toLowerCase()}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
+                <Text key={link.toLowerCase()} color={useColorModeValue('#ffd803', '#ffd803')}><NavLink >{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink></Text>
               ))}
               <IconButton size={"md"} icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} />
             </Stack>
