@@ -54,7 +54,7 @@ export default function Projects(props) {
       title: "Resto Management Web App",
       desc: "Develop a restaurant management application using ReactJS, and ChakraUI. Utilize firebase to store data and authentication for user.",
       img: portfolio7,
-      link: "https://fauzarizky.github.io/resto-management/",
+      link: "https://resto-management.vercel.app/",
     },
   ];
 
