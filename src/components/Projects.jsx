@@ -15,23 +15,26 @@ export default function Projects(props) {
       title: "Publishing Platform Web App",
       desc: "Creating a static publishing platform using HTML and Tailwindcss only.",
       img: portfolio1,
+      link: "https://fauzarizky.github.io/median-web"
     },
     {
       id: 2,
       title: "Event Management Web App",
-      desc: "Developed homepage with navigation, footer, and event filtering feature using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
+      desc: "Develop homepage with navigation, footer, and event filtering feature using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
       img: portfolio2,
+      link: "https://resilient-yeot-af509a.netlify.app"
     },
     {
       id: 3,
       title: "Advice & Quote Web App",
       desc: "Design and develop a website that generates customized quotes and advice using existing APIs.",
       img: portfolio3,
+      link: "https://fauzarizky.github.io/advice-quote"
     },
     {
       id: 4,
       title: "Weather Web App",
-      desc: "Developed a weather web app using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
+      desc: "Develop a weather web app using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
       img: portfolio4,
       link: "https://fauzarizky.github.io/weather-app",
     },
