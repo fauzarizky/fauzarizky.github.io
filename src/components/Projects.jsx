@@ -20,7 +20,7 @@ export default function Projects(props) {
     {
       id: 2,
       title: "Event Management Web App",
-      desc: "Develop homepage with navigation, footer, and event filtering feature using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
+      desc: "Develop homepage with navigation, footer, and event filtering feature using React JS and ChakraUI.(Group Project)",
       img: portfolio2,
       link: "https://resilient-yeot-af509a.netlify.app"
     },
