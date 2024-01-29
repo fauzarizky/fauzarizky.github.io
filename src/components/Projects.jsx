@@ -6,6 +6,7 @@ import portfolio4 from "../images/mac-view-weather-app.png";
 import portfolio5 from "../images/desktop-todo-app.png";
 import portfolio6 from "../images/bincang-app-desktop.png";
 import portfolio7 from "../images/resto-management-desktop.png";
+import portfolio8 from "../images/mac-view-split-bill.png";
 
 export default function Projects(props) {
   const { colorMode } = useColorMode();
@@ -59,6 +60,13 @@ export default function Projects(props) {
       img: portfolio7,
       link: "https://resto-management.vercel.app/",
     },
+    {
+      id: 8,
+      title: "Split Bill Web App",
+      desc: "Develop a split bill application using ReactJS, and ChakraUI + Tailwindcss. Utilize local browser storage to persist data.",
+      img: portfolio8,
+      link: "https://fauzarizky.github.io/split-bill-web/",
+    }
   ];
 
   const color = colorMode === "dark" ? "#ffd803" : "#272343";
