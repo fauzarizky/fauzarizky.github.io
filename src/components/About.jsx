@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box, Heading, Image, Stack, Text, useColorMode } from "@chakra-ui/react";
 import profileImg from "../images/profile.png";
 
@@ -49,7 +50,7 @@ export default function About(props) {
                 Purwadhika Digital Technology School
               </Text>
               <Text color={"#272343"} fontSize={{ base: "13px", sm: "15px", md: "15px" }}>
-                Bootcamp, Fullstack Web Development
+                Bootcamp, Fullstack Web Development (Final Score: 81.51)
               </Text>
 
               <Text fontWeight={"bold"} color={"#272343"} fontSize={{ base: "15px", md: "20px" }} mt={"10px"}>

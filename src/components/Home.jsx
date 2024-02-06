@@ -11,19 +11,18 @@ export default function Home(props) {
 
   return (
     <div data-aos="fade-up">
-      <Box id={`${props.id}`} h={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{base: 'column', md: 'row'}}>
-
-        <Box h={"80vh"} w={{base: '80%', md: "55%", lg: '50%'}} display={"flex"} alignItems={"center"} flexDir={"column"} justifyContent={"center"}>
-          <Box display={"flex"} alignItems={"start"} flexDir={"column"} w={{base: '100%', md: "80%"}}>
+      <Box id={`${props.id}`} h={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }}>
+        <Box h={"80vh"} w={{ base: "80%", md: "55%", lg: "50%" }} display={"flex"} alignItems={"center"} flexDir={"column"} justifyContent={"center"}>
+          <Box display={"flex"} alignItems={"start"} flexDir={"column"} w={{ base: "100%", md: "80%" }}>
             <Box bgColor={colorHi} padding={"10px"}>
-              <Heading fontSize={{base: '70px', sm: "90px", md: "80px", lg: '100px'}} color={color} style={{ fontFamily: "Roboto Mono, monoscope " }}>
+              <Heading fontSize={{ base: "70px", sm: "90px", md: "80px", lg: "120px" }} color={color} style={{ fontFamily: "Roboto Mono, monoscope " }}>
                 Hi,
               </Heading>
             </Box>
-            <Heading fontSize={{base: '60px', sm: '65px', md: '70px', lg: '80px'}} color={color} style={{ fontFamily: "Roboto Mono, monoscope " }}>
+            <Heading fontSize={{ base: "60px", sm: "65px", md: "70px", lg: "85px" }} color={color} style={{ fontFamily: "Roboto Mono, monoscope " }}>
               I'm Rizky
             </Heading>
-            <Heading style={{ fontFamily: "Roboto Mono, monoscope " }} fontSize={{base: '30px', sm: '40px', md: '25px', lg: '30px'}}>
+            <Heading style={{ fontFamily: "Roboto Mono, monoscope " }} fontSize={{ base: "30px", sm: "40px", md: "25px", lg: "35px" }}>
               <Typewriter
                 options={{
                   strings: ["Frontend Web", "Backend Web", "Fullstack Web"],
@@ -48,8 +47,8 @@ export default function Home(props) {
           </Box>
         </Box>
 
-        <Box h={"80vh"} w={{md: '40%',lg:'50%'}} display={{base: 'none', md: 'flex'}} justifyContent={"center"} alignItems={'center'}>
-          <Image src={profileImg} boxSize={{md: '450px', lg: '500px'}} objectFit={"contain"} />
+        <Box h={"80vh"} w={{ md: "40%", lg: "50%" }} display={{ base: "none", md: "flex" }} justifyContent={"center"} alignItems={"center"}>
+          <Image src={profileImg} boxSize={{ md: "450px", lg: "500px" }} objectFit={"contain"} />
         </Box>
       </Box>
     </div>

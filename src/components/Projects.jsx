@@ -4,7 +4,7 @@ import portfolio2 from "../images/mac-view-project-2.png";
 import portfolio3 from "../images/web-advice-quote.png";
 import portfolio4 from "../images/mac-view-weather-app.png";
 import portfolio5 from "../images/desktop-todo-app.png";
-import portfolio6 from "../images/bincang-app-desktop.png";
+import portfolio6 from "../images/iphone-view-recipe-app.png";
 import portfolio7 from "../images/resto-management-desktop.png";
 import portfolio8 from "../images/mac-view-split-bill.png";
 
@@ -35,7 +35,7 @@ export default function Projects(props) {
     {
       id: 4,
       title: "Weather Web App",
-      desc: "Develop a weather web app using React JS and ChakraUI. use user123 as username,and user123 as password.(Group Project)",
+      desc: "Practice to develop a website with weather API using ReactJS and ChakraUI.",
       img: portfolio4,
       link: "https://fauzarizky.github.io/weather-app",
     },
@@ -48,10 +48,10 @@ export default function Projects(props) {
     },
     {
       id: 6,
-      title: "Bincang Web App",
-      desc: "Develop a social media application using ReactJS, Redux, Redux Toolkit, and ChakraUI. Utilize both Redux for state management and local browser storage to persist data.",
+      title: "Recipe Web App",
+      desc: "Develop a mobile first recipe web app using ReactJS, Tailwindcss, and ChakraUI. Utilize local browser storage to persist data.",
       img: portfolio6,
-      link: "https://fauzarizky.github.io/bincang-app/",
+      link: "https://recipe-web-app-pi.vercel.app",
     },
     {
       id: 7,
