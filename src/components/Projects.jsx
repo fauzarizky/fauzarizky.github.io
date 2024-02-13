@@ -7,6 +7,7 @@ import portfolio5 from "../images/desktop-todo-app.png";
 import portfolio6 from "../images/iphone-view-recipe-app.png";
 import portfolio7 from "../images/resto-management-desktop.png";
 import portfolio8 from "../images/mac-view-split-bill.png";
+import portfolio9 from "../images/mac-view-prompt-craft.png";
 
 export default function Projects(props) {
   const { colorMode } = useColorMode();
@@ -15,7 +16,7 @@ export default function Projects(props) {
       id: 9,
       title: "Prompt Craft Web App",
       desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
-      img: portfolio8,
+      img: portfolio9,
       link: "https://prompt-craft-alpha.vercel.app",
     },
     {
