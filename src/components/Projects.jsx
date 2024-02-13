@@ -12,53 +12,11 @@ export default function Projects(props) {
   const { colorMode } = useColorMode();
   const listProjects = [
     {
-      id: 1,
-      title: "Publishing Platform Web App",
-      desc: "Creating a static publishing platform using HTML and Tailwindcss only.",
-      img: portfolio1,
-      link: "https://fauzarizky.github.io/median-web"
-    },
-    {
-      id: 2,
-      title: "Event Management Web App",
-      desc: "Develop homepage with navigation, footer, and event filtering feature using React JS and ChakraUI.(Group Project)",
-      img: portfolio2,
-      link: "https://resilient-yeot-af509a.netlify.app"
-    },
-    {
-      id: 3,
-      title: "Advice & Quote Web App",
-      desc: "Design and develop a website that generates customized quotes and advice using existing APIs.",
-      img: portfolio3,
-      link: "https://fauzarizky.github.io/advice-quote"
-    },
-    {
-      id: 4,
-      title: "Weather Web App",
-      desc: "Practice to develop a website with weather API using ReactJS and ChakraUI.",
-      img: portfolio4,
-      link: "https://fauzarizky.github.io/weather-app",
-    },
-    {
-      id: 5,
-      title: "ToDo List Web App",
-      desc: "Develop a ToDo List application using ReactJS and ChakraUI. Utilize local browser storage to save data.",
-      img: portfolio5,
-      link: "https://fauzarizky.github.io/todo-app/",
-    },
-    {
-      id: 6,
-      title: "Recipe Web App",
-      desc: "Develop a mobile first recipe web app using ReactJS, Tailwindcss, and ChakraUI. Utilize local browser storage to persist data.",
-      img: portfolio6,
-      link: "https://recipe-web-app-pi.vercel.app",
-    },
-    {
-      id: 7,
-      title: "Resto Management Web App",
-      desc: "Develop a restaurant management application using ReactJS, and ChakraUI. Utilize firebase to store data and authentication for user.",
-      img: portfolio7,
-      link: "https://resto-management.vercel.app/",
+      id: 9,
+      title: "Prompt Craft Web App",
+      desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
+      img: portfolio8,
+      link: "https://prompt-craft-alpha.vercel.app",
     },
     {
       id: 8,
@@ -68,12 +26,54 @@ export default function Projects(props) {
       link: "https://fauzarizky.github.io/split-bill-web/",
     },
     {
-      id: 9,
-      title: "Prompt Craft Web App",
-      desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
-      img: portfolio8,
-      link: "https://prompt-craft-alpha.vercel.app",
-    }
+      id: 7,
+      title: "Resto Management Web App",
+      desc: "Develop a restaurant management application using ReactJS, and ChakraUI. Utilize firebase to store data and authentication for user.",
+      img: portfolio7,
+      link: "https://resto-management.vercel.app/",
+    },
+    {
+      id: 6,
+      title: "Recipe Web App",
+      desc: "Develop a mobile first recipe web app using ReactJS, Tailwindcss, and ChakraUI. Utilize local browser storage to persist data.",
+      img: portfolio6,
+      link: "https://recipe-web-app-pi.vercel.app",
+    },
+    {
+      id: 5,
+      title: "ToDo List Web App",
+      desc: "Develop a ToDo List application using ReactJS and ChakraUI. Utilize local browser storage to save data.",
+      img: portfolio5,
+      link: "https://fauzarizky.github.io/todo-app/",
+    },
+    {
+      id: 4,
+      title: "Weather Web App",
+      desc: "Practice to develop a website with weather API using ReactJS and ChakraUI.",
+      img: portfolio4,
+      link: "https://fauzarizky.github.io/weather-app",
+    },
+    {
+      id: 3,
+      title: "Advice & Quote Web App",
+      desc: "Design and develop a website that generates customized quotes and advice using existing APIs.",
+      img: portfolio3,
+      link: "https://fauzarizky.github.io/advice-quote",
+    },
+    {
+      id: 2,
+      title: "Event Management Web App",
+      desc: "Develop homepage with navigation, footer, and event filtering feature using React JS and ChakraUI.(Group Project)",
+      img: portfolio2,
+      link: "https://resilient-yeot-af509a.netlify.app",
+    },
+    {
+      id: 1,
+      title: "Publishing Platform Web App",
+      desc: "Creating a static publishing platform using HTML and Tailwindcss only.",
+      img: portfolio1,
+      link: "https://fauzarizky.github.io/median-web",
+    },
   ];
 
   const color = colorMode === "dark" ? "#ffd803" : "#272343";
