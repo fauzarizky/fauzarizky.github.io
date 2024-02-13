@@ -66,6 +66,13 @@ export default function Projects(props) {
       desc: "Develop a split bill application using ReactJS, and ChakraUI + Tailwindcss. Utilize local browser storage to persist data.",
       img: portfolio8,
       link: "https://fauzarizky.github.io/split-bill-web/",
+    },
+    {
+      id: 9,
+      title: "Prompt Craft Web App",
+      desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
+      img: portfolio8,
+      link: "https://prompt-craft-alpha.vercel.app",
     }
   ];
 
