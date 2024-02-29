@@ -10,8 +10,8 @@ export default function Home(props) {
   const colorHi = colorMode === "dark" ? "#272343" : "#ffd803";
 
   return (
-    <div data-aos="fade-up">
-      <Box id={`${props.id}`} h={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }}>
+    <div data-aos="fade-up" id={`${props.id}`}>
+      <Box h={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }}>
         <Box h={"80vh"} w={{ base: "80%", md: "55%", lg: "50%" }} display={"flex"} alignItems={"center"} flexDir={"column"} justifyContent={"center"}>
           <Box display={"flex"} alignItems={"start"} flexDir={"column"} w={{ base: "100%", md: "80%" }}>
             <Box bgColor={colorHi} padding={"10px"}>

@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Card, CardBody, CardFooter, Heading, Image, Link, SimpleGrid, Stack, Text, useColorMode } from "@chakra-ui/react";
 import { LIST_PROJECTS } from "../constants/data";
+import { motion } from "framer-motion";
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 export default function Projects(props) {
   const { colorMode } = useColorMode();
 
@@ -14,23 +19,25 @@ export default function Projects(props) {
         </Heading>
         <Box mt={"20px"}>
           <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={"10"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} flexWrap={"wrap"} mb={"15px"}>
-            {LIST_PROJECTS.map((project) => (
-              <Card key={project.id} maxW="sm" minH={"550px"}>
-                <CardBody>
-                  <Image src={project.img} alt={project.title} borderRadius="lg" />
-                  <Stack mt="6" spacing="3">
-                    <Heading size="md">{project.title}</Heading>
-                    <Text>{project.desc}</Text>
-                  </Stack>
-                </CardBody>
-                <CardFooter>
-                  <Link href={project.link} isExternal>
-                    <Button variant="solid" color={"#ffd803"} bgColor={"#272343"} _hover={{ color: "#272343", bgColor: "#ffd803" }}>
-                      Visit
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
+            {LIST_PROJECTS.map((project, i) => (
+              <motion.div key={project.id} variants={variants} initial="hidden" animate="visible" transition={{ duration: 0.5, delay: i * 0.25, ease: "easeInOut" }}>
+                <Card maxW="sm" minH={"550px"}>
+                  <CardBody>
+                    <Image src={project.img} alt={project.title} borderRadius="lg" />
+                    <Stack mt="6" spacing="3">
+                      <Heading size="md">{project.title}</Heading>
+                      <Text>{project.desc}</Text>
+                    </Stack>
+                  </CardBody>
+                  <CardFooter>
+                    <Link href={project.link} isExternal>
+                      <Button variant="solid" color={"#ffd803"} bgColor={"#272343"} _hover={{ color: "#272343", bgColor: "#ffd803" }}>
+                        Visit
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             ))}
           </SimpleGrid>
         </Box>
