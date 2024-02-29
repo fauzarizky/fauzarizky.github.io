@@ -32,7 +32,7 @@ export const LIST_PROJECTS = [
   {
     id: 11,
     title: "Full-stack Multi Warehouse E-commerce",
-    desc: "Contributed in Profiling Page design and features, admin dashboard design and features (Authentication & Authorization for admin, stock management, Stock Report, and manage user data).",
+    desc: "Contributed to the designing and implementing the profiling page and admin dashboard, including Authentication and Authorization features, stock management, stock reports, and user data management.",
     img: portfolio11,
     link: "https://rains.anggaratriputra.my.id",
   },
