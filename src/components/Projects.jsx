@@ -20,7 +20,7 @@ export default function Projects(props) {
         <Box mt={"20px"}>
           <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={"10"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} flexWrap={"wrap"} mb={"15px"}>
             {LIST_PROJECTS.map((project, i) => (
-              <motion.div key={project.id} variants={variants} initial="hidden" animate="visible" transition={{ duration: 0.5, delay: i * 0.25, ease: "easeInOut" }}>
+              <motion.div key={project.id} variants={variants} initial="hidden" animate="visible" transition={{ duration: 0.5, delay: i * 0.25, ease: "easeInOut" }} data-aos="flip-left">
                 <Card maxW="sm" minH={"550px"}>
                   <CardBody>
                     <Image src={project.img} alt={project.title} borderRadius="lg" />

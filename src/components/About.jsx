@@ -9,7 +9,7 @@ export default function About(props) {
   const color = colorMode === "dark" ? "#ffd803" : "#272343";
 
   return (
-    <Box data-aos="fade-up" id={`${props.id}`} minH={"100vh"} display={"flex"} mb={{ base: 5, md: 0 }} justifyContent={"center"} flexDir={"column"} alignItems={"center"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
+    <Box data-aos="fade-up" id={`${props.id}`} minH={"100vh"} mx display={"flex"} mb={{ base: 5, md: 0 }} justifyContent={"center"} flexDir={"column"} alignItems={"center"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
       <Box display={"flex"} alignItems={"center"}>
         <Heading style={{ textDecoration: "underline", fontFamily: "Roboto Mono, monoscope" }} textAlign={"center"} color={color}>
           About
@@ -17,11 +17,11 @@ export default function About(props) {
       </Box>
 
       <Box display={"flex"} w={"100%"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} mt={{ lg: "20px" }}>
-        <Box w={{ base: "80%", md: "40%" }} display={"flex"} alignItems={"center"} justifyContent={"center"} me={"30px"}>
+        <Box w={{ base: "80%", md: "40%" }} display={"flex"} alignItems={"center"} justifyContent={"center"} me={"30px"} data-aos="fade-up-right">
           <Image src={profileImg} boxSize={{ base: "300px", md: "500px" }} objectFit={"contain"} />
         </Box>
 
-        <Stack w={{ base: "90%", md: "50%" }} bgColor={"#ffd803"} minH={"70vh"} borderRadius={"10px"} display={"flex"} alignItems={"center"} flexDir={"column"} spacing={{ base: "0", md: "20px" }} justifyContent={"center"} py={"25px"}>
+        <Stack w={{ base: "90%", md: "50%" }} bgColor={"#ffd803"} minH={"70vh"} borderRadius={"10px"} display={"flex"} alignItems={"center"} flexDir={"column"} spacing={{ base: "0", md: "20px" }} justifyContent={"center"} py={"25px"} data-aos="fade-up-left">
           <Box w={"90%"} mt={{ base: "5px", sm: "10px", md: 0 }} display={"flex"} flexDir={"column"} justifyContent={"center"}>
             <Heading color={"#272343"} fontWeight={"extrabold"} mb={"5px"} fontSize={{ sm: "25px", md: "30px", lg: "" }}>
               Background
