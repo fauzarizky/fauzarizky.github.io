@@ -2,13 +2,15 @@ import portfolio1 from "../images/mac-view-median-web.png";
 import portfolio2 from "../images/mac-view-project-2.png";
 import portfolio3 from "../images/web-advice-quote.png";
 import portfolio4 from "../images/mac-view-weather-app.png";
-import portfolio5 from "../images/desktop-todo-app.png";
+import portfolio5 from "../images/Macbook-Air-www.dapurmamavi.com.png";
 import portfolio6 from "../images/iphone-view-recipe-app.png";
 import portfolio7 from "../images/resto-management-desktop.png";
 import portfolio8 from "../images/mac-view-split-bill.png";
 import portfolio9 from "../images/mac-view-prompt-craft.png";
 import portfolio10 from "../images/mac-view-minpro-3.png";
 import portfolio11 from "../images/mac-view-finpro.png";
+
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux } from "react-icons/si";
 
 export const EDUCATION = [
   {
@@ -27,6 +29,8 @@ export const EDUCATION = [
     location: "SMKN 11 Semarang",
   },
 ];
+
+export const TECH_STACK = [SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux];
 
 export const LIST_PROJECTS = [
   {
@@ -73,10 +77,10 @@ export const LIST_PROJECTS = [
   },
   {
     id: 5,
-    title: "ToDo List Web App",
-    desc: "Develop a ToDo List application using ReactJS and ChakraUI. Utilize local browser storage to save data.",
+    title: "Online Shop Web App",
+    desc: "Develop a mobile first online shop web using Next, Typescript, and Tailwindcss. Integrate with Midtrans API for payment gateway.",
     img: portfolio5,
-    link: "https://fauzarizky.github.io/todo-app/",
+    link: "https://dapurmamavi.com",
   },
   {
     id: 4,

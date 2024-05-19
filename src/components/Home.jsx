@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Box, Heading, Icon, Image, Link, LinkBox, useColorMode } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
 import { FaLinkedin, FaGithub, FaBehance } from "react-icons/fa";
 import profileImg from "../images/profile.png";
+import { TECH_STACK } from "../constants/data";
 
 export default function Home(props) {
   const { colorMode } = useColorMode();
@@ -43,6 +45,13 @@ export default function Home(props) {
               <Icon as={FaBehance} boxSize={7} marginStart={"10px"} />
             </Link>
           </LinkBox>
+          <Box mt={"10px"}>
+            <Box display={"flex"} flexWrap={"wrap"} gap={"5px"}>
+              {TECH_STACK.map((Icon, index) => (
+                <Icon key={index} color={color} w={30} h={30} />
+              ))}
+            </Box>
+          </Box>
         </Box>
       </Box>
 
