@@ -21,7 +21,7 @@ export const EDUCATION = [
   {
     id: 2,
     title: "Bootcamp, Fullstack Web Development (Final Score: 81.51)",
-    location: "Digital Technology School",
+    location: "Purwadhika Digital Technology School",
   },
   {
     id: 3,
