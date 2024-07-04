@@ -2,13 +2,13 @@ import portfolio1 from "../images/mac-view-median-web.png";
 import portfolio2 from "../images/mac-view-project-2.png";
 import portfolio3 from "../images/web-advice-quote.png";
 import portfolio4 from "../images/mac-view-weather-app.png";
-import portfolio5 from "../images/Macbook-Air-www.dapurmamavi.com.png";
+import portfolio5 from "../images/mac-view-prompt-craft.png";
 import portfolio6 from "../images/iphone-view-recipe-app.png";
 import portfolio7 from "../images/resto-management-desktop.png";
 import portfolio8 from "../images/mac-view-split-bill.png";
-import portfolio9 from "../images/mac-view-prompt-craft.png";
-import portfolio10 from "../images/mac-view-minpro-3.png";
-import portfolio11 from "../images/mac-view-finpro.png";
+import portfolio9 from "../images/mac-view-minpro-3.png";
+import portfolio10 from "../images/mac-view-finpro.png";
+import portfolio11 from "../images/Macbook-Air-www.dapurmamavi.com.png";
 
 import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux } from "react-icons/si";
 
@@ -25,7 +25,7 @@ export const EDUCATION = [
   },
   {
     id: 3,
-    title: "Multimedia, learning about Adobe Photoshop, Illustrator, Photography, and Videography",
+    title: "Multimedia, learning about Adobe Photoshop, Illustrator, Photography, and Videography (Final Score: 87.29)",
     location: "SMKN 11 Semarang",
   },
 ];
@@ -35,24 +35,24 @@ export const TECH_STACK = [SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiE
 export const LIST_PROJECTS = [
   {
     id: 11,
-    title: "Full-stack Multi Warehouse E-commerce",
-    desc: "Contributed to the designing and implementing the profiling page and admin dashboard, including Authentication and Authorization features, stock management, stock reports, and user data management.",
+    title: "Online Shop Web App",
+    desc: "Develop a responsive online shop web using Next, Typescript, and Tailwindcss. Integrate with Midtrans API for payment gateway.",
     img: portfolio11,
-    link: "https://rains.anggaratriputra.my.id",
+    link: "https://dapurmamavi.com",
   },
   {
     id: 10,
-    title: "Full-stack Point Of Sale Web App",
-    desc: "Contributed to the development of the product list page, implementing filter and sort features. Worked on the admin dashboard, focusing on product & category CRUD functionalities, as well as features for the report page.",
+    title: "Full-stack Multi Warehouse E-commerce",
+    desc: "Contributed to the designing and implementing the profiling page and admin dashboard, including Authentication and Authorization features, stock management, stock reports, and user data management.",
     img: portfolio10,
-    link: "https://mekdi.anggaratriputra.my.id",
+    link: "https://rains.anggaratriputra.my.id",
   },
   {
     id: 9,
-    title: "Prompt Craft Web App",
-    desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
+    title: "Full-stack Point Of Sale Web App",
+    desc: "Contributed to the development of the product list page, implementing filter and sort features. Worked on the admin dashboard, focusing on product & category CRUD functionalities, as well as features for the report page.",
     img: portfolio9,
-    link: "https://prompt-craft-alpha.vercel.app",
+    link: "https://mekdi.anggaratriputra.my.id",
   },
   {
     id: 8,
@@ -77,10 +77,10 @@ export const LIST_PROJECTS = [
   },
   {
     id: 5,
-    title: "Online Shop Web App",
-    desc: "Develop a mobile first online shop web using Next, Typescript, and Tailwindcss. Integrate with Midtrans API for payment gateway.",
+    title: "Prompt Craft Web App",
+    desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
     img: portfolio5,
-    link: "https://dapurmamavi.com",
+    link: "https://prompt-craft-alpha.vercel.app",
   },
   {
     id: 4,
