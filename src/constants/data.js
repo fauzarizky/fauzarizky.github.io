@@ -8,7 +8,8 @@ import portfolio7 from "../images/resto-management-desktop.png";
 import portfolio8 from "../images/mac-view-split-bill.png";
 import portfolio9 from "../images/mac-view-minpro-3.png";
 import portfolio10 from "../images/mac-view-finpro.png";
-import portfolio11 from "../images/Macbook-Air-www.dapurmamavi.com.png";
+import portfolio11 from "../images/Macbook-Air-warehouse.png";
+import portfolio12 from "../images/Macbook-Air-www.dapurmamavi.com.png";
 
 import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux } from "react-icons/si";
 
@@ -34,11 +35,18 @@ export const TECH_STACK = [SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiE
 
 export const LIST_PROJECTS = [
   {
-    id: 11,
+    id: 12,
     title: "Online Shop Web App",
     desc: "Develop a responsive online shop web using Next, Typescript, and Tailwindcss. Integrate with Midtrans API for payment gateway.",
-    img: portfolio11,
+    img: portfolio12,
     link: "https://dapurmamavi.com",
+  },
+  {
+    id: 11,
+    title: "Full-stack Warehouse Management Web App",
+    desc: "Develop a responsive warehouse management web by implementing authentication and authorization features, user and record data management.",
+    img: portfolio11,
+    link: "https://bit.ly/warehouse-management-presentation",
   },
   {
     id: 10,
@@ -77,7 +85,7 @@ export const LIST_PROJECTS = [
   },
   {
     id: 5,
-    title: "Prompt Craft Web App",
+    title: "Full-stack Prompt Craft Web App",
     desc: "Develop a Full-Stack Web App using Next.js.The application utilizes mongoDB Atlas as its online database, with Mongoose serving as Object-Relational Mapping(ORM) tool for interacting with MongoDB.",
     img: portfolio5,
     link: "https://prompt-craft-alpha.vercel.app",
