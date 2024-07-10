@@ -71,7 +71,7 @@ export const LIST_PROJECTS = [
   },
   {
     id: 7,
-    title: "Resto Management Web App",
+    title: "Full-stack Resto Management Web App",
     desc: "Develop a restaurant management application using ReactJS, and ChakraUI. Utilize firebase to store data and authentication for user.",
     img: portfolio7,
     link: "https://resto-management.vercel.app/",
