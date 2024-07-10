@@ -93,7 +93,7 @@ export const LIST_PROJECTS = [
   {
     id: 4,
     title: "Weather Web App",
-    desc: "Practice to develop a website with weather API using ReactJS and ChakraUI.",
+    desc: "Practice to develop a website with weather API using ReactJS and ChakraUI. View NextJS version on the link below and clone the repo.\n github.com/fauzarizky/weather-app-nextjs",
     img: portfolio4,
     link: "https://fauzarizky.github.io/weather-app",
   },
