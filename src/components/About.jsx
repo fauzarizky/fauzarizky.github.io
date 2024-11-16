@@ -37,8 +37,8 @@ export default function About(props) {
               Background
             </Heading>
             <Text fontWeight={"medium"} color={"#272343"} fontSize={{ base: "13px", sm: "13px", md: "13px", lg: "15" }}>
-              A recent multimedia graduate from SMKN 11 Semarang, equipped with the skills and knowledge of a full stack web developer thanks to my intensive training at Purwadhika job connector program. My passion for learning, combined
-              with my newfound expertise in web development, makes me eager to contribute to impactful projects and launch my career in this exciting field.
+              A multimedia graduate from SMKN 11 Semarang, equipped with the skills and knowledge of full-stack web development thanks to my intensive training at Purwadhika job connector program. My passion for learning newfound expertise
+              in web development makes me eager to contribute to impactful projects and launch my career in this exciting field.
             </Text>
           </Box>
 
