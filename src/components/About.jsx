@@ -15,9 +15,9 @@ export default function About(props) {
         </Heading>
       </Box>
 
-      <Box display={"flex"} w={"93%"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} mt={{ lg: "20px" }}>
-        <Box w={{ base: "80%", md: "40%" }} display={"flex"} alignItems={"center"} justifyContent={"center"} me={"30px"} data-aos="fade-up-right">
-          <Image src={profileImg} boxSize={{ base: "300px", md: "400px" }} objectFit={"contain"} rounded={"full"} />
+      <Box display={"flex"} w={"93%"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} mt={"20px"}>
+        <Box w={{ base: "100%", md: "40%" }} display={"flex"} alignItems={"center"} justifyContent={"center"} data-aos="fade-up-right" mb={"20px"}>
+          <Image src={profileImg} boxSize={{ base: "300px", md: "400px" }} objectFit={"cover"} rounded={"full"} />
         </Box>
 
         <Stack

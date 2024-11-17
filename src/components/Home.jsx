@@ -56,7 +56,7 @@ export default function Home(props) {
       </Box>
 
       <Box h={"80vh"} w={{ md: "40%", lg: "50%" }} display={{ base: "none", md: "flex" }} justifyContent={"center"} alignItems={"center"}>
-        <Image src={profileImg} boxSize={"400px"} objectFit={"contain"} rounded={"full"} />
+        <Image src={profileImg} boxSize={"400px"} objectFit={"cover"} rounded={"full"} />
       </Box>
     </Box>
   );

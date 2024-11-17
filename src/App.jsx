@@ -3,18 +3,21 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import { Helmet } from "react-helmet";
-import 'aos/dist/aos.css'
-import AOS from 'aos';
+import "aos/dist/aos.css";
+import AOS from "aos";
 import Footer from "./components/Footer";
-import "./assets/index.css"
+import "./assets/index.css";
+import { Box } from "@chakra-ui/react";
 
-AOS.init()
+AOS.init();
 
 function App() {
   return (
     <>
       <Navbar>
-        <Home id="Home" />
+        <Box overflow={"hidden"}>
+          <Home id="Home" />
+        </Box>
         <About id="About" />
         <Projects id="Projects" />
         <Footer />
