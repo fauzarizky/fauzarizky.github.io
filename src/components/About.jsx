@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Box, Heading, Image, Stack, Text, useColorMode } from "@chakra-ui/react";
-import profileImg from "../images/profile.png";
+import profileImg from "../images/profile-pic.png";
 import { EDUCATION } from "../constants/data";
 
 export default function About(props) {
@@ -17,7 +17,7 @@ export default function About(props) {
 
       <Box display={"flex"} w={"93%"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} mt={{ lg: "20px" }}>
         <Box w={{ base: "80%", md: "40%" }} display={"flex"} alignItems={"center"} justifyContent={"center"} me={"30px"} data-aos="fade-up-right">
-          <Image src={profileImg} boxSize={{ base: "300px", md: "500px" }} objectFit={"contain"} />
+          <Image src={profileImg} boxSize={{ base: "300px", md: "400px" }} objectFit={"contain"} rounded={"full"} />
         </Box>
 
         <Stack

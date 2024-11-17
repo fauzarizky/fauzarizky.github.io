@@ -2,7 +2,7 @@
 import { Box, Heading, Icon, Image, Link, LinkBox, useColorMode } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
 import { FaLinkedin, FaGithub, FaBehance } from "react-icons/fa";
-import profileImg from "../images/profile.png";
+import profileImg from "../images/profile-pic.png";
 import { TECH_STACK } from "../constants/data";
 
 export default function Home(props) {
@@ -56,7 +56,7 @@ export default function Home(props) {
       </Box>
 
       <Box h={"80vh"} w={{ md: "40%", lg: "50%" }} display={{ base: "none", md: "flex" }} justifyContent={"center"} alignItems={"center"}>
-        <Image src={profileImg} boxSize={{ md: "450px", lg: "450px" }} objectFit={"contain"} />
+        <Image src={profileImg} boxSize={"400px"} objectFit={"contain"} rounded={"full"} />
       </Box>
     </Box>
   );
