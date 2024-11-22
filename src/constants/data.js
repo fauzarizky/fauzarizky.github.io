@@ -77,14 +77,14 @@ export const LIST_PROJECTS = [
     title: "Full-stack Multi Warehouse E-commerce",
     desc: "Contributed to the designing and implementing the profiling page and admin dashboard, including Authentication and Authorization features, stock management, stock reports, and user data management.",
     img: portfolio10,
-    link: "https://rains.anggaratriputra.my.id",
+    link: "https://bit.ly/demo-multi-warehouse-management",
   },
   {
     id: 9,
     title: "Full-stack Point Of Sale Web App",
     desc: "Contributed to the development of the product list page, implementing filter and sort features. Worked on the admin dashboard, focusing on product & category CRUD functionalities, as well as features for the report page.",
     img: portfolio9,
-    link: "https://mekdi.anggaratriputra.my.id",
+    link: "https://bit.ly/point-of-sale-presentation",
   },
   // {
   //   id: 8,
