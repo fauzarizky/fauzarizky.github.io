@@ -38,7 +38,7 @@ export default function Navbar(props) {
       <Box bg={colorMode === "light" ? "#272343" : "gray.900"} px={4} w={"100%"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
         <Flex alignItems={"center"} justifyContent={"space-between"} h={"10vh"}>
           <IconButton size={"md"} aria-label={"Open Menu"} display={{ md: "none" }} onClick={toggleOpen} bgColor={"transparent"}>
-            {isOpen ? <CloseIcon onClick={toggleOpen} /> : <HamburgerIcon onClick={toggleOpen} />}
+            {isOpen ? <CloseIcon onClick={toggleOpen} color={"#FFFFFF"} /> : <HamburgerIcon onClick={toggleOpen} color={"#FFFFFF"} />}
           </IconButton>
           <a href="/rizky-portfolio">
             <Text fontSize={"30px"} fontWeight={"bold"} style={{ cursor: "pointer" }} color={"#ffd803"}>

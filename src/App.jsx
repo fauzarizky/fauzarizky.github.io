@@ -7,7 +7,6 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import Footer from "./components/Footer";
 import "./assets/index.css";
-import { Box } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -17,9 +16,7 @@ function App() {
   return (
     <>
       <Navbar>
-        <Box overflow={"hidden"}>
-          <Home id="Home" />
-        </Box>
+        <Home id="Home" />
         <About id="About" />
         <Projects id="Projects" />
         <Footer />
