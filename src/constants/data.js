@@ -12,7 +12,6 @@ import portfolio11 from "../images/Macbook-Air-warehouse.png";
 import portfolio12 from "../images/Macbook-Air-www.dapurmamavi.com.png";
 import portfolio13 from "../images/Macbook-Air-yayasangsn.id.png";
 import portfolio14 from "../images/Macbook-Air-advomed.id.png";
-import portfolio15 from "../images/Macbook-Air-advomed.id-ads-advo-clinic.png";
 
 import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux } from "react-icons/si";
 
@@ -38,18 +37,11 @@ export const TECH_STACK = [SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiE
 
 export const LIST_PROJECTS = [
   {
-    id: 15,
-    title: "Landing Page For Advertisement",
-    desc: "Develop a responsive landing page for advertisement purposes.",
-    img: portfolio15,
-    link: "https://advomed.id/ads/advo-clinic",
-  },
-  {
     id: 14,
     title: "Company Profile Web",
     desc: "Contributed to the development of the company profile web, focusing on the product, about us, pricing, FAQ, and reservation pages.",
     img: portfolio14,
-    link: "https://advomed.id",
+    link: "https://bit.ly/advomed-portfolio",
   },
   {
     id: 13,
