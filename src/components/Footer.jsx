@@ -1,38 +1,27 @@
-import { Box, ButtonGroup, IconButton, Stack, Text } from "@chakra-ui/react";
-import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { useColorMode } from "./ui/color-mode";
+const SOCIALS = [
+  { href: "https://www.linkedin.com/in/fauzarizky/", label: "LinkedIn" },
+  { href: "https://github.com/fauzarizky", label: "GitHub" },
+  { href: "https://behance.net/fauzarizky", label: "Behance" },
+];
 
 export default function Footer() {
-  const { colorMode } = useColorMode();
   return (
-    <Box w={"100%"} as="footer" py={{ base: "8", md: "10" }} px={{ base: "4", md: "8" }} bg={colorMode === "light" ? "#272343" : "gray.900"} color={"#ffd803"}>
-      <Stack spacing={{ base: "4", md: "5" }}>
-        <Stack justify="space-between" direction="row" align="center">
-          <Text fontSize={"40px"} fontWeight={"bold"}>
-            rzky()
-          </Text>
-          <ButtonGroup variant="tertiary">
-            <IconButton as="a" href="https://www.linkedin.com/in/fauzarizky" aria-label="LinkedIn" size={"lg"}>
-              <FaLinkedin />
-            </IconButton>
-            <IconButton as="a" href="https://github.com/fauzarizky" aria-label="GitHub" size={"lg"}>
-              <FaGithub />
-            </IconButton>
-            <IconButton as="a" href="https://behance.net/fauzarizky" aria-label="Twitter" size={"lg"}>
-              <FaBehance />
-            </IconButton>
-          </ButtonGroup>
-        </Stack>
-
-        <Stack>
-          <Text fontSize="md">Willing to apply in:</Text>
-          <Stack direction="row" align="center">
-            <FaLocationDot />
-            <Text fontSize="md">Jakarta, Semarang, Indonesia</Text>
-          </Stack>
-        </Stack>
-      </Stack>
-    </Box>
+    <footer className="bg-[#272343] px-6 py-16 text-center dark:bg-[#14111F] md:px-16 md:py-20">
+      <h2 className="mb-7 text-2xl font-extrabold text-white md:text-[32px]">Let&apos;s build something.</h2>
+      <div className="flex flex-wrap justify-center gap-5">
+        {SOCIALS.map(({ href, label }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-[#FFD803] pb-0.5 font-mono text-sm text-[#FFD803] no-underline transition-opacity hover:opacity-70"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+      <p className="mt-10 font-mono text-xs text-white/40">© 2026 Fauza Rizky</p>
+    </footer>
   );
 }

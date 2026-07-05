@@ -1,81 +1,85 @@
-import { Box, Flex, Stack, HStack, IconButton, Text } from "@chakra-ui/react";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { IoIosSunny, IoIosMoon } from "react-icons/io";
-import { useColorMode } from "./ui/color-mode";
+/* eslint-disable react/prop-types */
 import { useState } from "react";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
+import { LuMoon, LuSun, LuMenu, LuX } from "react-icons/lu";
 
-const Links = ["home", "about", "projects"];
+const LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+];
 
-const NavLink = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const { children, colorMode } = props;
-  return (
-    <Box
-      as="a"
-      px={2}
-      py={2}
-      w={"100%"}
-      display={"block"}
-      _hover={{
-        textDecoration: "none",
-        bg: colorMode === "light" ? "#573B78" : "gray.700",
-      }}
-      href={`#${children}`}>
-      {children}
-    </Box>
-  );
-};
-
-export default function Navbar(props) {
-  // eslint-disable-next-line react/prop-types
-  const { children } = props;
-  const { colorMode, toggleColorMode } = useColorMode();
+export default function Navbar({ children }) {
+  const { resolvedTheme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const isDark = resolvedTheme === "dark";
+  const toggleColorMode = () => setTheme(isDark ? "light" : "dark");
 
   return (
-    <Box overflowX={"hidden"}>
-      <Box bg={colorMode === "light" ? "#272343" : "gray.900"} px={4} w={"100%"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
-        <Flex alignItems={"center"} justifyContent={"space-between"} h={"10vh"}>
-          <IconButton size={"md"} aria-label={"Open Menu"} display={{ md: "none" }} onClick={toggleOpen} bgColor={"transparent"}>
-            {isOpen ? <CloseIcon onClick={toggleOpen} color={"#FFFFFF"} /> : <HamburgerIcon onClick={toggleOpen} color={"#FFFFFF"} />}
-          </IconButton>
-          <a href="/rizky-portfolio">
-            <Text fontSize={"30px"} fontWeight={"bold"} style={{ cursor: "pointer" }} color={"#ffd803"}>
-              rzky()
-            </Text>
-          </a>
-          <HStack spacing={8} alignItems={"center"}>
-            <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
-              {Links.map((link) => (
-                <Text key={link} color={"#ffd803"}>
-                  <NavLink colorMode={colorMode}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink>
-                </Text>
-              ))}
-              <IconButton size={"md"} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} display={{ sm: "none", md: "flex" }} ml={"10px"} bgColor={"transparent"}>
-                {colorMode === "dark" ? <IoIosSunny color={"#FFFFFF"} /> : <IoIosMoon />}
-              </IconButton>
-            </HStack>
-          </HStack>
-        </Flex>
+    <div className="min-h-screen bg-[#FBF9F4] font-sans text-[#272343] transition-colors duration-300 dark:bg-[#211D3A] dark:text-[#F5F1E8]">
+      <nav className="sticky top-0 z-50 flex items-center justify-between bg-[#272343] px-6 py-[22px] dark:bg-[#14111F] md:px-16">
+        <a href="#home" className="font-mono text-[22px] font-bold text-[#FFD803] no-underline">
+          rzky()
+        </a>
 
-        {isOpen ? (
-          <Box pb={4}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <Text key={link.toLowerCase()} color={"#ffd803"}>
-                  <NavLink colorMode={colorMode}>{link.charAt(0).toUpperCase() + link.slice(1)}</NavLink>
-                </Text>
-              ))}
-              <IconButton size={"md"} aria-label={"Toggle Dark Mode"} onClick={toggleColorMode} bgColor={"#573B78"} borderRadius={"none"}>
-                {colorMode === "dark" ? <IoIosSunny color={"#FFFFFF"} /> : <IoIosMoon />}
-              </IconButton>
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
+        <div className="hidden items-center gap-8 md:flex">
+          {LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-mono text-sm text-white/85 no-underline transition-opacity hover:opacity-100"
+            >
+              {link.label}
+            </a>
+          ))}
+          <motion.button
+            onClick={toggleColorMode}
+            aria-label="Toggle theme"
+            whileTap={{ scale: 0.9, rotate: 180 }}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-[#FFD803]"
+          >
+            {isDark ? <LuMoon size={16} /> : <LuSun size={16} />}
+          </motion.button>
+        </div>
 
-      <Box>{children}</Box>
-    </Box>
+        <button aria-label="Open menu" className="text-white md:hidden" onClick={() => setIsOpen((v) => !v)}>
+          {isOpen ? <LuX size={22} /> : <LuMenu size={22} />}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden bg-[#272343] px-6 dark:bg-[#14111F] md:hidden"
+          >
+            <div className="flex flex-col items-end gap-4 pb-6 pt-2">
+              {LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-mono text-sm text-white/85 no-underline"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <button
+                onClick={toggleColorMode}
+                aria-label="Toggle theme"
+                className="flex items-center gap-2 font-mono text-sm text-[#FFD803]"
+              >
+                {isDark ? <LuMoon size={16} /> : <LuSun size={16} />} Toggle theme
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {children}
+    </div>
   );
 }

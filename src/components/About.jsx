@@ -1,53 +1,44 @@
 /* eslint-disable react/prop-types */
-import { Box, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import profileImg from "../images/profile-pic.png";
 import { EDUCATION } from "../constants/data";
-import { useColorMode } from "./ui/color-mode";
-import { TimelineConnector, TimelineContent, TimelineItem, TimelineRoot, TimelineTitle } from "./ui/timeline";
 
-export default function About(props) {
-  const { colorMode } = useColorMode();
-  const color = colorMode === "dark" ? "#ffd803" : "#272343";
-
+export default function About({ id }) {
   return (
-    <Box data-aos="fade-up" id={`${props.id}`} minH={"100vh"} mx display={"flex"} mb={{ base: 5, md: 0 }} justifyContent={"center"} flexDir={"column"} alignItems={"center"} style={{ fontFamily: "Roboto Mono, monoscope" }}>
-      <Heading style={{ textDecoration: "underline", fontFamily: "Roboto Mono, monoscope" }} textAlign={"center"} color={color} fontSize={"40px"} mb={"5px"}>
+    <section id={id} className="mx-auto max-w-[1280px] px-6 py-20 md:px-16">
+      <p className="mb-9 font-mono text-[13px] uppercase tracking-[0.08em] text-[#573B78] dark:text-[#C9B6EE]">
         About
-      </Heading>
+      </p>
+      <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold">Background</h2>
+          <p className="leading-[1.7] text-[rgba(39,35,67,0.62)] dark:text-[rgba(245,241,232,0.62)]">
+            A multimedia graduate turned full-stack web developer, sharpened through intensive training in
+            Purwadhika&apos;s job-connector program. I&apos;m eager to keep learning and to ship products that make a
+            real difference.
+          </p>
+        </div>
 
-      <Box display={"flex"} w={"90%"} justifyContent={"center"} alignItems={"center"} flexDir={"column"} mt={"50px"}>
-        <Box w={{ base: "100%", md: "40%" }} display={{ base: "flex", md: "none" }} alignItems={"center"} justifyContent={"center"} data-aos="fade-up-right" mb={"20px"}>
-          <Image src={profileImg} boxSize={{ base: "300px", md: "400px" }} objectFit={"cover"} rounded={"full"} />
-        </Box>
-
-        <Stack w={{ base: "90%", md: "100%" }} bgColor={"#ffd803"} display={"flex"} alignItems={"center"} flexDir={"column"} spacing={{ base: "0", md: "20px" }} justifyContent={"center"} py={"25px"}>
-          <Box w={"90%"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <Heading color={"#272343"} fontWeight={"extrabold"} mb={"20px"} fontSize={{ sm: "25px", md: "30px", lg: "" }}>
-              Background
-            </Heading>
-            <Text fontWeight={"medium"} color={"#272343"} fontSize={{ base: "13px", sm: "13px", md: "13px", lg: "15px" }}>
-              A multimedia graduate from SMKN 11 Semarang, equipped with the skills and knowledge of full-stack web development thanks to my intensive training at Purwadhika job connector program. My passion for learning newfound expertise
-              in web development makes me eager to contribute to impactful projects and launch my career in this exciting field.
-            </Text>
-          </Box>
-        </Stack>
-        <Box w={"90%"} display={"flex"} flexDir={"column"} justifyContent={"center"} mt={"50px"} gap={"10px"}>
-          <Heading color={color} fontWeight={"extrabold"} mb={"20px"} fontSize={{ sm: "25px", md: "30px", lg: "" }}>
-            Education
-          </Heading>
-          <TimelineRoot variant={"solid"} colorPalette={"yellow"}>
-            {EDUCATION?.map((item) => (
-              <TimelineItem key={item.id}>
-                <TimelineConnector />
-                <TimelineContent>
-                  <TimelineTitle>{item.location}</TimelineTitle>
-                  <Text textStyle={"sm"}>{item.title}</Text>
-                </TimelineContent>
-              </TimelineItem>
+        <div>
+          <h2 className="mb-4 text-2xl font-bold">Education</h2>
+          <div className="flex flex-col">
+            {EDUCATION.map((edu) => (
+              <div key={edu.id} className="flex gap-3.5 border-b border-black/10 py-3.5 last:border-none dark:border-white/10">
+                <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-[#FFD803]" />
+                <div>
+                  <p className="mb-1 text-[15px] font-semibold">{edu.title}</p>
+                  {edu.score && (
+                    <p className="mb-1 font-mono text-[13px] text-[#573B78] dark:text-[#C9B6EE]">
+                      Final Score: {edu.score}
+                    </p>
+                  )}
+                  <p className="font-mono text-[13px] text-[rgba(39,35,67,0.62)] dark:text-[rgba(245,241,232,0.62)]">
+                    {edu.location}
+                  </p>
+                </div>
+              </div>
             ))}
-          </TimelineRoot>
-        </Box>
-      </Box>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

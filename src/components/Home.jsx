@@ -1,70 +1,66 @@
 /* eslint-disable react/prop-types */
-import { Box, Heading, Icon, Image, Link, LinkBox } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaLinkedin, FaGithub, FaBehance } from "react-icons/fa";
-import profileImg from "../images/profile-pic.png";
-import { TECH_STACK } from "../constants/data";
-import { useColorMode } from "./ui/color-mode";
+import profilePic from "../images/profile-pic.png";
 
-export default function Home(props) {
-  const { colorMode } = useColorMode();
+const SOCIALS = [
+  { href: "https://www.linkedin.com/in/fauzarizky/", label: "LinkedIn", Icon: FaLinkedin },
+  { href: "https://github.com/fauzarizky", label: "GitHub", Icon: FaGithub },
+  { href: "https://behance.net/fauzarizky", label: "Behance", Icon: FaBehance },
+];
 
-  const color = colorMode === "dark" ? "#ffd803" : "#272343";
-  const colorHi = colorMode === "dark" ? "gray.900" : "#ffd803";
-
+export default function Home({ id }) {
   return (
-    <Box id={`${props.id}`} h={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDir={{ base: "column", md: "row" }} data-aos="fade-up">
-      <Box h={"80vh"} w={{ base: "80%", md: "55%", lg: "50%" }} display={"flex"} alignItems={"center"} flexDir={"column"} justifyContent={"center"}>
-        <Box display={"flex"} alignItems={"start"} flexDir={"column"} gap={"30px"} w={{ base: "100%", md: "80%" }}>
-          <Box display={"flex"} flexDir={"column"}>
-            <Heading bgColor={colorHi} w={"fit-content"} fontSize={{ base: "70px", sm: "90px", md: "80px", lg: "120px" }} color={color} style={{ fontFamily: "Roboto Mono, monospace" }} p={2} lineHeight={"normal"}>
-              Hi,
-            </Heading>
+    <section
+      id={id}
+      className="mx-auto flex max-w-[1280px] flex-col-reverse items-center justify-between gap-12 px-6 py-20 md:flex-row md:px-16 md:py-28"
+    >
+      <div className="max-w-[640px]">
+        <p className="mb-4 font-mono text-[13px] uppercase tracking-[0.08em] text-[#573B78] dark:text-[#C9B6EE]">
+          Portfolio — 2026
+        </p>
+        <h1 className="mb-6 text-[32px] font-extrabold leading-[1.15] sm:text-[40px] md:text-[48px]">
+          I&apos;m Fauza, a{" "}
+          <span className="font-mono font-bold text-[#FFD803]">
+            <Typewriter
+              options={{
+                strings: ["Frontend Web", "Backend Web", "Fullstack Web"],
+                autoStart: true,
+                loop: true,
+                delay: 60,
+                deleteSpeed: 30,
+              }}
+            />
+          </span>{" "}
+          Developer.
+        </h1>
+        <p className="mb-8 max-w-[520px] text-[17px] leading-[1.6] text-[rgba(39,35,67,0.62)] dark:text-[rgba(245,241,232,0.62)]">
+          I build fast, quality products using AI-accelerated development — with a focus on clean code and real user needs.
+        </p>
+        <div className="flex flex-wrap gap-5">
+          {SOCIALS.map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border-b border-[#573B78] pb-0.5 font-mono text-sm no-underline transition-opacity hover:opacity-70"
+            >
+              <Icon size={16} /> {label}
+            </a>
+          ))}
+        </div>
+      </div>
 
-            <Heading fontSize={{ base: "60px", sm: "65px", md: "70px", lg: "85px" }} color={color} style={{ fontFamily: "Roboto Mono, monoscope" }} lineHeight={"normal"}>
-              I&apos;m Rizky
-            </Heading>
-
-            <Heading style={{ fontFamily: "Roboto Mono, monoscope " }} fontSize={{ base: "30px", sm: "40px", md: "25px", lg: "35px" }} color={colorMode === "dark" ? "#FFFFFF" : "#272343"}>
-              <Typewriter
-                options={{
-                  strings: ["Frontend Web", "Backend Web", "Fullstack Web"],
-                  autoStart: true,
-                  loop: true,
-                  delay: 75,
-                }}
-              />
-            </Heading>
-          </Box>
-
-          <Box id="icon">
-            <LinkBox id="social-media" flexDirection={"row"} mt={"10px"}>
-              <Link href="https://www.linkedin.com/in/fauzarizky/" isExternal>
-                <Icon as={FaLinkedin} boxSize={7} />
-              </Link>
-              <Link href="https://github.com/fauzarizky" isExternal>
-                <Icon as={FaGithub} boxSize={7} marginStart={"10px"} />
-              </Link>
-
-              <Link href="https://behance.net/fauzarizky" isExternal>
-                <Icon as={FaBehance} boxSize={7} marginStart={"10px"} />
-              </Link>
-            </LinkBox>
-
-            <Box id="tech-stack" mt={"10px"}>
-              <Box display={"flex"} flexWrap={"wrap"} gap={"5px"}>
-                {TECH_STACK.map((Icon, index) => (
-                  <Icon key={index} color={color} />
-                ))}
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-
-      <Box h={"80vh"} w={{ md: "40%", lg: "50%" }} display={{ base: "none", md: "flex" }} justifyContent={"center"} alignItems={"center"}>
-        <Image src={profileImg} boxSize={"400px"} objectFit={"cover"} rounded={"full"} />
-      </Box>
-    </Box>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex h-[220px] w-[220px] flex-none items-center justify-center overflow-hidden rounded-full bg-[#FFD803] sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px]"
+      >
+        <img src={profilePic} alt="Fauza" className="h-full w-full object-cover" />
+      </motion.div>
+    </section>
   );
 }

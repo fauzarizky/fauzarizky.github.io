@@ -13,7 +13,23 @@ import portfolio12 from "../images/Macbook-Air-www.dapurmamavi.com.png";
 import portfolio13 from "../images/Macbook-Air-yayasangsn.id.png";
 import portfolio14 from "../images/Macbook-Air-advomed.id.png";
 
-import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux } from "react-icons/si";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiChakraui,
+  SiDaisyui,
+  SiExpress,
+  SiGithub,
+  SiVisualstudiocode,
+  SiFigma,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+} from "react-icons/si";
+import { LuComponent, LuSparkles } from "react-icons/lu";
+import { GiBearHead } from "react-icons/gi";
 
 export const EDUCATION = [
   {
@@ -23,17 +39,41 @@ export const EDUCATION = [
   },
   {
     id: 2,
-    title: "Bootcamp, Fullstack Web Development (Final Score: 81.51)",
+    title: "Bootcamp, Fullstack Web Development",
+    score: "81.51",
     location: "Purwadhika Digital Technology School",
   },
   {
     id: 3,
-    title: "Multimedia, learning about Adobe Photoshop, Illustrator, Photography, and Videography (Final Score: 87.29)",
+    title: "Multimedia, learning about Adobe Photoshop, Illustrator, Photography, and Videography",
+    score: "87.29",
     location: "SMKN 11 Semarang",
   },
 ];
 
-export const TECH_STACK = [SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiExpress, SiMysql, SiTailwindcss, SiChakraui, SiRedux];
+export const TECH_STACK = {
+  frontend: [
+    { name: "Javascript", Icon: SiJavascript, color: "#F7DF1E" },
+    { name: "Typescript", Icon: SiTypescript, color: "#3178C6" },
+    { name: "React", Icon: SiReact, color: "#61DAFB" },
+    { name: "Next", Icon: SiNextdotjs, mono: true },
+    { name: "Tailwindcss", Icon: SiTailwindcss, color: "#06B6D4" },
+    { name: "Zustand", Icon: GiBearHead, color: "#8B5E3C" },
+    { name: "ChakraUI", Icon: SiChakraui, color: "#319795" },
+    { name: "DaisyUI", Icon: SiDaisyui, color: "#1AD1A5" },
+    { name: "Shadcn", Icon: LuComponent, mono: true },
+  ],
+  backend: [{ name: "ExpressJS", Icon: SiExpress, mono: true }],
+  tools: [
+    { name: "Claude AI", svgPath: "/claude.svg" },
+    { name: "Gemini", Icon: LuSparkles, color: "#4285F4" },
+    { name: "Git & GitHub", Icon: SiGithub, mono: true },
+    { name: "Visual Studio Code", Icon: SiVisualstudiocode, color: "#007ACC" },
+    { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+    { name: "Adobe Photoshop", Icon: SiAdobephotoshop, color: "#31A8FF" },
+    { name: "Adobe Illustrator", Icon: SiAdobeillustrator, color: "#FF9A00" },
+  ],
+};
 
 export const LIST_PROJECTS = [
   {
