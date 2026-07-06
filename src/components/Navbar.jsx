@@ -16,6 +16,17 @@ export default function Navbar({ children }) {
   const isDark = resolvedTheme === "dark";
   const toggleColorMode = () => setTheme(isDark ? "light" : "dark");
 
+  const handleNavClick = (e, href) => {
+    setIsOpen(false);
+    e.preventDefault();
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-[#FBF9F4] font-sans text-[#272343] transition-colors duration-300 dark:bg-[#211D3A] dark:text-[#F5F1E8]">
       <nav className="sticky top-0 z-50 flex items-center justify-between bg-[#272343] px-6 py-[22px] dark:bg-[#14111F] md:px-16">
@@ -28,7 +39,8 @@ export default function Navbar({ children }) {
             <a
               key={link.href}
               href={link.href}
-              className="font-mono text-sm text-white/85 no-underline transition-opacity hover:opacity-100"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="font-mono text-sm text-white/85 no-underline transition-opacity hover:opacity-100 cursor-pointer"
             >
               {link.label}
             </a>
@@ -54,15 +66,15 @@ export default function Navbar({ children }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden bg-[#272343] px-6 dark:bg-[#14111F] md:hidden"
+            className="sticky top-[70px] z-40 overflow-hidden bg-[#272343] px-6 dark:bg-[#14111F] md:hidden"
           >
             <div className="flex flex-col items-end gap-4 pb-6 pt-2">
               {LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="font-mono text-sm text-white/85 no-underline"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="font-mono text-sm text-white/85 no-underline transition-opacity hover:opacity-100 cursor-pointer"
                 >
                   {link.label}
                 </a>
