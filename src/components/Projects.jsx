@@ -12,6 +12,7 @@ export default function Projects({ id }) {
         {LIST_PROJECTS.map((project) => (
           <motion.a
             key={project.id}
+            data-test="project-card"
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"

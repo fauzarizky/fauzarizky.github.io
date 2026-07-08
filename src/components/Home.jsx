@@ -42,6 +42,7 @@ export default function Home({ id }) {
           {SOCIALS.map(({ href, label, Icon }) => (
             <a
               key={label}
+              data-test={`home-social-${label.toLowerCase()}`}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -59,7 +60,7 @@ export default function Home({ id }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex h-[220px] w-[220px] flex-none items-center justify-center overflow-hidden rounded-full bg-[#FFD803] sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px]"
       >
-        <img src={profilePic} alt="Fauza" className="h-full w-full object-cover" />
+        <img data-test="profile-pic" src={profilePic} alt="Fauza" className="h-full w-full object-cover" />
       </motion.div>
     </section>
   );

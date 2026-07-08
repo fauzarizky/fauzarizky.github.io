@@ -1,63 +1,102 @@
 /* eslint-disable no-undef */
-describe("Navbar Components", () => {
+// Navigation bar: logo, section links (smooth-scroll, no hash change),
+// theme toggle, and the responsive mobile menu.
+describe("Navbar", () => {
+  const LINKS = ["home", "about", "projects"];
+
   beforeEach(() => {
     cy.visit("/");
   });
 
-  const links = ["Home", "About", "Projects"];
-
-  context("Desktop resolution", () => {
+  context("Desktop (1440x900)", () => {
     beforeEach(() => {
       cy.viewport(1440, 900);
     });
 
-    it("should render the navbar", () => {
+    it("renders the navbar with a working logo", () => {
       cy.getDataTest("navbar").should("be.visible");
-      cy.getDataTest("logo").should("be.visible").and("have.attr", "href", "/");
-      cy.getDataTest("logo").click().url().should("eq", "http://localhost:5173/");
+      cy.getDataTest("logo").should("be.visible").and("have.text", "rzky()").and("have.attr", "href", "#home");
+    });
 
-      links.forEach((link) => {
-        cy.getDataTest(`nav-link-text-${link.toLowerCase()}`).should("be.visible").and("have.text", link);
-
-        cy.getDataTest(`nav-link-text-${link.toLowerCase()}`).click();
-        cy.url().should("eq", `http://localhost:5173/#${link}`);
+    it("shows every desktop nav link and hides the mobile menu toggle", () => {
+      LINKS.forEach((link) => {
+        cy.getDataTest(`nav-link-${link}`)
+          .should("be.visible")
+          .and("have.attr", "href", `#${link}`);
       });
-
-      cy.getDataTest("toggle-dark-mode").should("be.visible").click();
-      cy.getDataTest("toggle-dark-mode").click();
-
       cy.getDataTest("menu-toggle").should("not.be.visible");
+    });
+
+    it("smooth-scrolls to a section without changing the URL hash", () => {
+      cy.window().its("scrollY").should("eq", 0);
+
+      cy.getDataTest("nav-link-projects").click();
+      cy.window().its("scrollY").should("be.greaterThan", 100);
+      // handleNavClick calls preventDefault, so the hash must NOT change.
+      cy.location("hash").should("eq", "");
+
+      cy.getDataTest("nav-link-home").click();
+      cy.window().its("scrollY").should("be.lessThan", 100);
+    });
+
+    it("toggles the color theme back and forth", () => {
+      cy.get("html").then(($html) => {
+        const startedDark = $html.hasClass("dark");
+
+        cy.getDataTest("toggle-theme").should("be.visible").click();
+        cy.get("html").should(startedDark ? "not.have.class" : "have.class", "dark");
+
+        cy.getDataTest("toggle-theme").click();
+        cy.get("html").should(startedDark ? "have.class" : "not.have.class", "dark");
+      });
     });
   });
 
-  context("iphone xr resolution", () => {
+  context("Mobile (iphone-xr)", () => {
     beforeEach(() => {
       cy.viewport("iphone-xr");
     });
 
-    it("should render the navbar", () => {
-      cy.getDataTest("navbar").should("be.visible");
-      cy.getDataTest("logo").should("be.visible").and("have.attr", "href", "/");
-      cy.getDataTest("logo").click().url().should("eq", "http://localhost:5173/");
-
-      links.forEach((link) => {
-        cy.getDataTest(`nav-link-text-${link.toLowerCase()}`).should("not.be.visible");
+    it("hides desktop links and reveals the hamburger toggle", () => {
+      LINKS.forEach((link) => {
+        cy.getDataTest(`nav-link-${link}`).should("not.be.visible");
       });
+      cy.getDataTest("menu-toggle").should("be.visible");
+      cy.getDataTest("mobile-menu").should("not.exist");
+    });
 
-      cy.getDataTest("menu-toggle").should("be.visible").click();
+    it("opens and closes the mobile menu", () => {
+      cy.getDataTest("menu-toggle").click();
       cy.getDataTest("mobile-menu").should("be.visible");
 
-      cy.getDataTest("mobile-toggle-dark-mode").should("be.visible").click();
-      cy.getDataTest("mobile-toggle-dark-mode").click();
-
-      links.forEach((link) => {
-        cy.getDataTest(`mobile-nav-link-text-${link.toLowerCase()}`).should("be.visible").and("have.text", link);
-
-        cy.getDataTest(`mobile-nav-link-text-${link.toLowerCase()}`).click();
-        cy.url().should("eq", `http://localhost:5173/#${link}`);
+      LINKS.forEach((link) => {
+        cy.getDataTest(`mobile-nav-link-${link}`)
+          .should("be.visible")
+          .and("have.attr", "href", `#${link}`);
       });
 
+      // Re-tapping the toggle collapses the menu.
       cy.getDataTest("menu-toggle").click();
+      cy.getDataTest("mobile-menu").should("not.exist");
+    });
+
+    it("toggles the theme from inside the mobile menu", () => {
+      cy.getDataTest("menu-toggle").click();
+      cy.get("html").then(($html) => {
+        const startedDark = $html.hasClass("dark");
+        cy.getDataTest("mobile-toggle-theme").should("be.visible").click();
+        cy.get("html").should(startedDark ? "not.have.class" : "have.class", "dark");
+      });
+    });
+
+    it("closes the menu and scrolls when a mobile link is tapped", () => {
+      cy.getDataTest("menu-toggle").click();
+      cy.getDataTest("mobile-nav-link-projects").click();
+
+      // Menu collapses on navigation and the page scrolls to the section.
+      cy.getDataTest("mobile-menu").should("not.exist");
+      cy.window().its("scrollY").should("be.greaterThan", 100);
+      cy.location("hash").should("eq", "");
     });
   });
 });

@@ -21,7 +21,7 @@ export default function About({ id }) {
           <h2 className="mb-4 text-2xl font-bold">Education</h2>
           <div className="flex flex-col">
             {EDUCATION.map((edu) => (
-              <div key={edu.id} className="flex gap-3.5 border-b border-black/10 py-3.5 last:border-none dark:border-white/10">
+              <div key={edu.id} data-test="education-item" className="flex gap-3.5 border-b border-black/10 py-3.5 last:border-none dark:border-white/10">
                 <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-[#FFD803]" />
                 <div>
                   <p className="mb-1 text-[15px] font-semibold">{edu.title}</p>

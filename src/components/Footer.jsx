@@ -6,12 +6,13 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#272343] px-6 py-16 text-center dark:bg-[#14111F] md:px-16 md:py-20">
+    <footer data-test="footer" className="bg-[#272343] px-6 py-16 text-center dark:bg-[#14111F] md:px-16 md:py-20">
       <h2 className="mb-7 text-2xl font-extrabold text-white md:text-[32px]">Let&apos;s build something.</h2>
       <div className="flex flex-wrap justify-center gap-5">
         {SOCIALS.map(({ href, label }) => (
           <a
             key={label}
+            data-test={`footer-social-${label.toLowerCase()}`}
             href={href}
             target="_blank"
             rel="noopener noreferrer"

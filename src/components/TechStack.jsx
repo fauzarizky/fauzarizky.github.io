@@ -9,12 +9,13 @@ const GROUPS = [
 
 function TechGroup({ label, items }) {
   return (
-    <div>
+    <div data-test="tech-group">
       <h2 className="mb-6 text-2xl font-bold">{label}</h2>
       <div className="flex flex-wrap gap-3">
         {items.map(({ name, Icon, color, mono, svgPath }) => (
           <div
             key={name}
+            data-test="tech-item"
             className="flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm dark:border-white/10"
           >
             {svgPath ? (
